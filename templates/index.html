@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<h1 style="text-align:center;">BMI Calculator</h1>
+<p>Body mass index (BMI) is calculated by taking a person’s weight in kilograms divided by the square of height in meters.
+    <br>In this case, we input the weight in pounds and the app will do the unit conversions.
+    <br>Note: Enter integers only.</p>
+
+<html>
+    <body>
+        <body style="background-color:rgb(231, 242, 243);">
+        </body>
+        <form action = "/Calculate" method = "POST"> 
+        
+        Weight (lb)
+        <input type = "text" name = "weight_p"><br>
+        Height (ft)
+        <input type = "text" name = "height_f"><br>
+        Height (in)
+        <input type = "text" name = "height_in"><br>
+        <p>---------------------------------------------</p>
+        <button type = "submit" value = "submit">Calculate</button>
+        
+        </form>
+        {% if BMI %}
+        <p>Your BMI is {{BMI}}.</p>
+        {% endif %}
+    </body>
+
+</html>
