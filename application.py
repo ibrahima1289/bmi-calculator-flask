@@ -6,11 +6,7 @@ from flask import request
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return "BMI Calculator"
-
-@app.route("/Calculate", methods = ['POST', 'GET'])
+@app.route("/", methods = ['POST', 'GET'])
 def Calculate():
     BMI = ''
     if request.method == 'POST' and 'weight_p' in request.form and 'height_f' in request.form and 'height_in' in request.form:
