@@ -19,26 +19,5 @@ def Calculate():
         height_sq = ((height_f*12) + height_in)**2 
 
         BMI = round((weight_p/height_sq)*703, 2) #Formular that calculate the BMI.
-#         get1 = (18.5*height_sq)/703 - weight_p #get1 and get2 are the variables that calculate the weight to gain or to lose.
-#         get2 = (25*height_sq)/703 - weight_p
-
-#         if ((BMI >= 18.5) and (BMI <= 25)):
-#             print("Great. Maintain your current healphy weight.")
-
-#         elif ((BMI > 16) and (BMI <18.5)):
-#             print("You are underweight.")
-#             print("To get to the healthy weight you need to gain from",int(get1),"to",int(get2),"pounds.")
-
-#         elif (BMI <= 16):
-#             print("You are severely underweight.")
-#             print("To get to the healthy weight you need to gain from",int(get1),"to",int(get2),"pounds.")
-
-#         elif ((BMI > 25) and (BMI < 30)):
-#             print("You are overweight.") 
-#             print("To get to the healthy weight you need to lose from",int(-get2),"to",int(-get1),"pounds.")
-
-#         else:
-#             print("You are severely overweight.")
-#             print("To get to the healthy weight you need to lose from",int(-get2),"to",int(-get1),"pounds.")
 
     return render_template("index.html", BMI = BMI)
