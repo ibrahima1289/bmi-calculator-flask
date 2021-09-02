@@ -8,8 +8,8 @@
     <body>
         <body style="background-color:rgb(231, 242, 243);">
         </body>
-        <form action = "/" method = "POST"> 
         
+        <form action = "/" method = "POST">
         Weight (lb)
         <input type = "text" name = "weight_p"><br>
         Height (ft)
@@ -18,11 +18,31 @@
         <input type = "text" name = "height_in"><br>
         <p>---------------------------------------------</p>
         <button type = "submit" value = "submit">Calculate</button>
-        
         </form>
-        {% if BMI %}
-        <p>Your BMI is {{BMI}}.</p>
+        
+        {% if BMI, get1, get2 %}
+        <p>Your BMI is {{BMI}}.</p> 
+
+            {% if BMI > 18.5 and  25 >= BMI %}
+            <p>Great. Maintain your current healthy weight.</p>
+
+            {%elif BMI > 16 and 18.5 > BMI %}
+            <p>You are underweight.</p>
+            <p>To get to the healthy you need to gain some weight.</p> 
+            
+            {%elif 16 > BMI %}
+            <p>You are severely underweight.</p>
+            <p>To get to the healthy you need to gain some weight.</p> 
+
+            {%elif BMI > 25 and 30 > BMI %}
+            <p>You are overweight.</p>
+            <p>To get to the healthy you need to lose some weight.</p> 
+
+            {% else%}
+            <p>You are severely overweight.</p>
+            <p>To get to the healthy you need to lose some weight.</p> 
+
+            {% endif %} 
         {% endif %}
     </body>
-
 </html>
