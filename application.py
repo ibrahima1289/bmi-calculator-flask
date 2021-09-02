@@ -1,10 +1,8 @@
-#BMI_Calculator
-
 from flask import Flask
 from flask import render_template
 from flask import request
 
-application = app = Flask(__name__)
+app = Flask(__name__)
 
 @app.route("/", methods = ['POST', 'GET'])
 def Calculate():
